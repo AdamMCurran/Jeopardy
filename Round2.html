@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="Round2.css">
+<title>Jeopardy! Warhammer Edition!</title>
+</head>
+
+
+<body style="background-color:#070c1d">
+<div class="bigBox" id="fullContainer">
+    <div class="frame-top">
+        <div class="frame" id="frameTopLeft"><img id="topLeft" src="Images/Frame_Top_Left.png"></img></div>
+        <div class="frame" id="frameTopCenter"><img src="Images/large_button_frame_center_top.png"></img></div>
+        <div class="frame" id="frameTopRight"><img src="Images/Frame_Top_Right.png"></img></div>
+    </div>
+    <div class="bigBox" id="categories">
+        <div class="smallBox" id="cat1">Category</div>
+        <div class="smallBox" id="cat2">Category</div>
+        <div class="smallBox" id="cat3">Category</div>
+        <div class="smallBox" id="cat4">Category</div>
+        <div class="smallBox" id="cat5">Category</div>
+        <div class="smallBox" id="cat6">Category</div>
+    </div>
+    <div class="bigBox" id="questions">
+        <div class="column" id="column1">
+            <button data-modal-target='#modal' class="question" id="col1Q1" 
+            onclick="changeModel('Category 1','This is the 100 question.')">100</button>
+            <button data-modal-target='#modal' class="question" id="col1Q2"
+            onclick="changeModel('Category 1','This is the 200 question.')">200</button>
+            <button data-modal-target='#modal' class="question" id="col1Q3"
+            onclick="changeModel('Category 1','This is the 300 question.')">300</button>
+            <button data-modal-target='#modal' class="question" id="col1Q4"
+            onclick="changeModel('Category 1','This is the 400 question.')">400</button>
+            <button data-modal-target='#modal' class="question" id="col1Q5"
+            onclick="changeModel('Category 1','This is the 500 question.')">500</button>
+            
+        </div>
+        <div class="column" id="column2">
+            <button data-modal-target='#modal' class="question" id="col2Q1"
+            onclick="changeModel('Category 2','This is the 100 question.')">100</button>
+            <button data-modal-target='#modal' class="question" id="col2Q2"
+            onclick="changeModel('Category 2','This is the 200 question.')">200</button>
+            <button data-modal-target='#modal' class="question" id="col2Q3"
+            onclick="changeModel('Category 2','This is the 300 question.')">300</button>
+            <button data-modal-target='#modal' class="question" id="col2Q4"
+            onclick="changeModel('Category 2','This is the 400 question.')">400</button>
+            <button data-modal-target='#modal' class="question" id="col2Q5"
+            onclick="changeModel('Category 2','This is the 500 question.')">500</button>
+            
+        </div>
+        <div class="column" id="column3">
+            <button data-modal-target='#modal' class="question" id="col3Q1"
+            onclick="changeModel('Category 3','This is the 100 question.')">100</button>
+            <button data-modal-target='#modal' class="question" id="col3Q2"
+            onclick="changeModel('Category 3','This is the 200 question.')">200</button>
+            <button data-modal-target='#modal' class="question" id="col3Q3"
+            onclick="changeModel('Category 3','This is the 300 question.')">300</button>
+            <button data-modal-target='#modal' class="question" id="col3Q4"
+            onclick="changeModel('Category 3','This is the 400 question.')">400</button>
+            <button data-modal-target='#modal' class="question" id="col3Q5"
+            onclick="changeModel('Category 3','This is the 500 question.')">500</button>
+            
+        </div>
+        <div class="column" id="column4">
+            <button data-modal-target='#modal' class="question" id="col4Q1"
+            onclick="changeModel('Category 4','This is the 100 question.')">100</button>
+            <button data-modal-target='#modal' class="question" id="col4Q2"
+            onclick="changeModel('Category 4','This is the 200 question.')">200</button>
+            <button data-modal-target='#modal' class="question" id="col4Q3"
+            onclick="changeModel('Category 4','This is the 300 question.')">300</button>
+            <button data-modal-target='#modal' class="question" id="col4Q4"
+            onclick="changeModel('Category 4','This is the 400 question.')">400</button>
+            <button data-modal-target='#modal' class="question" id="col4Q5"
+            onclick="changeModel('Category 4','This is the 500 question.')">500</button>
+            
+        </div>
+        <div class="column" id="column5">
+            <button data-modal-target='#modal' class="question" id="col5Q1"
+            onclick="changeModel('Category 5','This is the 100 question.')">100</button>
+            <button data-modal-target='#modal' class="question" id="col5Q2"
+            onclick="changeModel('Category 5','This is the 200 question.')">200</button>
+            <button data-modal-target='#modal' class="question" id="col5Q3"
+            onclick="changeModel('Category 5','This is the 300 question.')">300</button>
+            <button data-modal-target='#modal' class="question" id="col5Q4"
+            onclick="changeModel('Category 5','This is the 400 question.')">400</button>
+            <button data-modal-target='#modal' class="question" id="col5Q5"
+            onclick="changeModel('Category 5','This is the 500 question.')">500</button>
+            
+        </div>
+        <div class="column" id="column6">
+            <button data-modal-target='#modal' class="question" id="col6Q1"
+            onclick="changeModel('Category 6','This is the 100 question.')">100</button>
+            <button data-modal-target='#modal' class="question" id="col6Q2"
+            onclick="changeModel('Category 6','This is the 200 question.')">200</button>
+            <button data-modal-target='#modal' class="question" id="col6Q3"
+            onclick="changeModel('Category 6','This is the 300 question.')">300</button>
+            <button data-modal-target='#modal' class="question" id="col6Q4"
+            onclick="changeModel('Category 6','This is the 400 question.')">400</button>
+            <button data-modal-target='#modal' class="question" id="col6Q5"
+            onclick="changeModel('Category 6','This is the 500 question.')">500</button>
+            
+        </div>
+    </div>
+    <div class="frame-bottom">
+        <img class="frameBottomLeft" src="Images/Frame_Bottom_Left.png"></img>
+        <img class="frameBottomCenter" src="Images/Frame_Bottom_Center.png"></img>
+        <img class="frameBottomRight" src="Images/Frame_Bottom_Right.png"></img>
+    </div>
+
+
+    <!-- put  data-modal-target='#modal'  in button to target specific modal -->
+    <div class="questionModal" id="modal">
+        <div class="questionHead">
+            <div class="questionCateg" id="catMod">This is the Category of the question</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="questionFull" id="questMod">This is the Question of the question</div>
+        <div class="questionFoot">
+            <button class="qCorrect">+</button>
+            <button class="qWrong">-</button>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+</div>
+<script>
+
+const openQuestionButton = document.querySelectorAll('[data-modal-target]');
+const closeQuestionButton = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+
+openQuestionButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.questionModal.active')
+    modals.forEach(modal => {
+        closeModal(modal);
+    })
+})
+
+closeQuestionButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.questionModal')
+        closeModal(modal)
+    })
+})
+
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+const catMod = document.getElementById('catMod');
+const questMod = document.getElementById('questMod')
+const changeModel = function(category,question){
+    catMod.innerHTML = category;
+    questMod.innerHTML = question;
+};
+
+
+
+</script>
+</body>

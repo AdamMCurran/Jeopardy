@@ -1,0 +1,160 @@
+.bigBox{
+    display:flex;
+    
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+#fullContainer{
+    display:flex;
+    flex-direction: column;
+    
+    position: relative;
+    background: url(Images/63610d094b2a23cb047d3b0e_scrollbar.png);
+    border-radius: 5px;
+    border: 2px rgba(87,232,246,.8) solid;
+    background-size: 1%;
+    padding-top: 0;
+}
+
+
+
+#frameTopLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+#topLeft {
+    
+}
+#frameTopCenter {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+#frameTopRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#categories{
+    background-image: linear-gradient(slategray,dimgray);
+    border: outset lightsteelblue;
+}
+
+.smallBox{
+    display:flex;
+    border: inset lightsteelblue;
+    width: 14vw;
+    height: 14vh;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(lightsteelblue,slategray);
+}
+
+#questions {
+    
+}
+
+#column{
+    display: flex;
+    flex-direction: column;
+}
+
+.question{
+    cursor: pointer;
+    outline:2px solid purple;
+    width: 14vw;
+    height: 14vh;
+    color: grey;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#frameBottomLeft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+}
+#frameBottomCenter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+#frameBottomRight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.questionModal {
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 700px;
+    max-width: 80%;
+    height: 700px;
+    max-height: 80%;
+}
+
+.questionModal.active {
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+.questionHead {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+}
+
+.questionHead .questionCateg {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.questionHead .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.questionFull {
+    padding: 10px 15px;
+
+}
+
+#overlay{
+    position: fixed;
+    opacity:0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(87,232,246,.3);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
