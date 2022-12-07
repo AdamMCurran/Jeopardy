@@ -9,11 +9,7 @@
 
 <body style="background-color:#070c1d">
 <div class="bigBox" id="fullContainer">
-    <div class="frame-top">
-        <div class="frame" id="frameTopLeft"><img id="topLeft" src="Images/Frame_Top_Left.png"></img></div>
-        <div class="frame" id="frameTopCenter"><img src="Images/large_button_frame_center_top.png"></img></div>
-        <div class="frame" id="frameTopRight"><img src="Images/Frame_Top_Right.png"></img></div>
-    </div>
+
     <div class="bigBox" id="categories">
         <div class="smallBox" id="cat1">Category</div>
         <div class="smallBox" id="cat2">Category</div>
@@ -25,7 +21,7 @@
     <div class="bigBox" id="questions">
         <div class="column" id="column1">
             <button data-modal-target='#modal' class="question" id="col1Q1" 
-            onclick="changeModel('Category 1','This is the 100 question.')">100</button>
+            onclick="changeModel('That Horus and His Heresy',`This Primarch of the Iron Hands wasn't very ahead of the game during the battle of Istvaan V.`)">100</button>
             <button data-modal-target='#modal' class="question" id="col1Q2"
             onclick="changeModel('Category 1','This is the 200 question.')">200</button>
             <button data-modal-target='#modal' class="question" id="col1Q3"
@@ -102,27 +98,31 @@
             
         </div>
     </div>
-    <div class="frame-bottom">
-        <img class="frameBottomLeft" src="Images/Frame_Bottom_Left.png"></img>
-        <img class="frameBottomCenter" src="Images/Frame_Bottom_Center.png"></img>
-        <img class="frameBottomRight" src="Images/Frame_Bottom_Right.png"></img>
-    </div>
 
 
     <!-- put  data-modal-target='#modal'  in button to target specific modal -->
     <div class="questionModal" id="modal">
+        
+        <div class="frame" id="frameTopLeft"><img id="topLeft" src="Images/Frame_Top_Left.png"></img></div>
+        <div class="frame" id="frameTopRight"><img src="Images/Frame_Top_Right.png"></img></div>
+        <div class="frame" id="frameTopCenter"><img src="Images/large_button_frame_center_top.png"></img></div>
         <div class="questionHead">
             <div class="questionCateg" id="catMod">This is the Category of the question</div>
             <button data-close-button class="close-button">&times;</button>
         </div>
+
         <div class="questionFull" id="questMod">This is the Question of the question</div>
         <div class="questionFoot">
             <button class="qCorrect">+</button>
             <button class="qWrong">-</button>
         </div>
+        <img class="frame" id="frameBottomLeft" src="Images/Frame_Bottom_Left.png"></img>
+        <img class="frame" id="frameBottomRight" src="Images/Frame_Bottom_Right.png"></img>
+        <img class="frame" id="frameBottomCenter" src="Images/Frame_Bottom_Center.png"></img>
     </div>
 
     <div id="overlay"></div>
+
 </div>
 <script>
 
