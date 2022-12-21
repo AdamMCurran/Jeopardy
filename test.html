@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="Round2.css">
+<title>Jeopardy! Warhammer Edition!</title>
+</head>
+
+
+<body style="background-color:#070c1d">
+<div class="bigBox" id="fullContainer">
+
+    <div class="bigBox" id="categories">
+        <div class="smallBox" id="cat1">Main Character Syndrome</div>
+        <div class="smallBox" id="cat2">Funny Nicknames</div>
+        <div class="smallBox" id="cat3">Daddy Issues</div>
+        <div class="smallBox" id="cat4">Xenoscum</div>
+        <div class="smallBox" id="cat5">The Old Lore</div>
+        <div class="smallBox" id="cat6">Noises of 40k</div>
+    </div>
+    <div class="bigBox" id="questions">
+        <div class="column" id="column1">
+            <button data-modal-target='#modal' class="question" id="col1Q1" 
+            onclick="changeModel(mainCharacter.category,mainCharacter.question1)">100</button>
+            <button data-modal-target='#modal' class="question" id="col1Q2"
+            onclick="changeModel(mainCharacter.category,mainCharacter.question2)">200</button>
+            <button data-modal-target='#modal' class="question" id="col1Q3"
+            onclick="changeModel(mainCharacter.category,mainCharacter.question3)">300</button>
+            <button data-modal-target='#modal' class="question" id="col1Q4"
+            onclick="changeModel(mainCharacter.category,mainCharacter.question4)">400</button>
+            <button data-modal-target='#modal' class="question" id="col1Q5"
+            onclick="changeModel(mainCharacter.category,mainCharacter.question5)">500</button>
+            
+        </div>
+        <div class="column" id="column2">
+            <button data-modal-target='#modal' class="question" id="col2Q1"
+            onclick="changeModel(funnyNicknames.category,funnyNicknames.question1)">100</button>
+            <button data-modal-target='#modal' class="question" id="col2Q2"
+            onclick="changeModel(funnyNicknames.category,funnyNicknames.question2)">200</button>
+            <button data-modal-target='#modal' class="question" id="col2Q3"
+            onclick="changeModel(funnyNicknames.category,funnyNicknames.question3)">300</button>
+            <button data-modal-target='#modal' class="question" id="col2Q4"
+            onclick="changeModel(funnyNicknames.category,funnyNicknames.question4)">400</button>
+            <button data-modal-target='#modal' class="question" id="col2Q5"
+            onclick="changeModel(funnyNicknames.category,funnyNicknames.question5)">500</button>
+            
+        </div>
+        <div class="column" id="column3">
+            <button data-modal-target='#modal' class="question" id="col3Q1"
+            onclick="changeModel(daddyIssues.category,daddyIssues.question1)">100</button>
+            <button data-modal-target='#modal' class="question" id="col3Q2"
+            onclick="changeModel(daddyIssues.category,daddyIssues.question2)">200</button>
+            <button data-modal-target='#modal' class="question" id="col3Q3"
+            onclick="changeModel(daddyIssues.category,daddyIssues.question3)">300</button>
+            <button data-modal-target='#modal' class="question" id="col3Q4"
+            onclick="changeModel(daddyIssues.category,daddyIssues.question4)">400</button>
+            <button data-modal-target='#modal' class="question" id="col3Q5"
+            onclick="changeModel(daddyIssues.category,daddyIssues.question5)">500</button>
+            
+        </div>
+        <div class="column" id="column4">
+            <button data-modal-target='#modal' class="question" id="col4Q1"
+            onclick="changeModel(xenoscum.category,xenoscum.question1)">100</button>
+            <button data-modal-target='#modal' class="question" id="col4Q2"
+            onclick="changeModel(xenoscum.category,xenoscum.question2)">200</button>
+            <button data-modal-target='#modal' class="question" id="col4Q3"
+            onclick="changeModel(xenoscum.category,xenoscum.question3)">300</button>
+            <button data-modal-target='#modal' class="question" id="col4Q4"
+            onclick="changeModel(xenoscum.category,xenoscum.question4)">400</button>
+            <button data-modal-target='#modal' class="question" id="col4Q5"
+            onclick="changeModel(xenoscum.category,xenoscum.question5)">500</button>
+            
+        </div>
+        <div class="column" id="column5">
+            <button data-modal-target='#modal' class="question" id="col5Q1"
+            onclick="changeModel(oldLore.category,oldLore.question1)">100</button>
+            <button data-modal-target='#modal' class="question" id="col5Q2"
+            onclick="changeModel(oldLore.category,oldLore.question2)">200</button>
+            <button data-modal-target='#modal' class="question" id="col5Q3"
+            onclick="changeModel(oldLore.category,oldLore.question3)">300</button>
+            <button data-modal-target='#modal' class="question" id="col5Q4"
+            onclick="changeModel(oldLore.category,oldLore.question4)">400</button>
+            <button data-modal-target='#modal' class="question" id="col5Q5"
+            onclick="changeModel(oldLore.category,oldLore.question5)">500</button>
+            
+        </div>
+        <div class="column" id="column6">
+            <button data-modal-target='#modal' class="question" id="col6Q1"
+            onclick="changeModel(noises.category,noises.question1)">100</button>
+            <button data-modal-target='#modal' class="question" id="col6Q2"
+            onclick="changeModel(noises.category,noises.question2)">200</button>
+            <button data-modal-target='#modal' class="question" id="col6Q3"
+            onclick="changeModel(noises.category,noises.question3)">300</button>
+            <button data-modal-target='#modal' class="question" id="col6Q4"
+            onclick="changeModel(noises.category,noises.question4)">400</button>
+            <button data-modal-target='#modal' class="question" id="col6Q5"
+            onclick="changeModel(noises.category,noises.question5)">500</button>
+            
+        </div>
+    </div>
+
+
+    <!-- put  data-modal-target='#modal'  in button to target specific modal -->
+    <div class="questionModal" id="modal">
+        
+        <div class="frame" id="frameTopLeft"><img id="topLeft" src="Images/Frame_Top_Left.png"></img></div>
+        <div class="frame" id="frameTopRight"><img src="Images/Frame_Top_Right.png"></img></div>
+        <div class="frame" id="frameTopCenter"><img src="Images/large_button_frame_center_top.png"></img></div>
+        <div class="questionHead">
+            <div class="questionCateg" id="catMod">This is the Category of the question</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="questionFull" id="questMod">This is the Question of the question</div>
+        <div class="questionFoot">
+            <button class="resultButton" id="qWrong">-</button>
+            <button class="resultButton" id="qCorrect">+</button>
+        </div>
+        <img class="frame" id="frameBottomLeft" src="Images/Frame_Bottom_Left.png"></img>
+        <img class="frame" id="frameBottomRight" src="Images/Frame_Bottom_Right.png"></img>
+        <img class="frame" id="frameBottomCenter" src="Images/Frame_Bottom_Center.png"></img>
+    </div>
+    
+    <div id="overlay"></div>
+    <button id="nextRoundBtn" onclick="changeButton()">Next Round?</button>
+</div>
+<script>
+// add button <button id="nextRoundBtn">Next Round?</button>
+
+
+
+const openQuestionButton = document.querySelectorAll('[data-modal-target]');
+const closeQuestionButton = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+
+openQuestionButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.questionModal.active')
+    modals.forEach(modal => {
+        closeModal(modal);
+    })
+})
+
+closeQuestionButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.questionModal')
+        closeModal(modal)
+    })
+})
+
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+const catMod = document.getElementById('catMod');
+const questMod = document.getElementById('questMod')
+const changeModel = function(category,question){
+    catMod.innerHTML = category;
+    questMod.innerHTML = question;
+};
+
+
+const smallBox = document.getElementsByClassName('smallBox');
+
+function removePoints(){
+    
+}
+
+const nextRoundBtn = document.getElementById('nextRoundBtn');
+
+function nextRound(){
+    if(smallBox.innerHTML = ''){
+        nextRoundBtn.style.visibility='visible';
+    }
+}
+
+function changeButton(){
+    window.location.href = 'Round2.html'
+}
+
+
+
+
+//ROUND 1 Question Objects
+const mainCharacter = {category: `Main Character Syndrome`,
+question1: `Heir apparent to Chapter Master Marneus Calgar, this Captain of the Ultramarines is often lauded by his very own Primarch.`, answer1: `Cato Sicarius`,
+question2: `Beheld to each Chaos God individually, the first Daemon Prince of Chaos, he is the Dark Master.`, answer2: `Be'lakor`,
+question3: `A manipulator of the Horus Heresy, an instigator of the Second War for Armageddon, and an exile of his own people, this Eldar Farseer is said to be over 10,000 years old.`, answer3: `Eldrad Ulthran`,
+question4: `An honorable Nemesor who is aided by his faithful protector Obyron, this Necron overlord often suffers from a 'weakness of the flesh'.`, answer4: `Zahndrekh`,
+question5: `From lowly slave to de-facto ruler, this leader of the Kabal of the Black Heart is also lord of Commorragh.`, answer5: `Asdrubael Vect`,
+}
+const funnyNicknames = {category: `Funny Nicknames`,
+question1: `This term is used often when an Eldar refers to a human, regardless of trans-human status.`, answer1: `Mon-keigh`,
+question2: `An abhuman species that is sometimes thought of as Xenos, Humans often use this term when referring to the Kin of Votann.`, answer2: `Squat`,
+question3: `Prone to falling to Chaos, Imperial Citizens fear and often shun these animalistic Abhumans.`, answer3: `Beastmen`,
+question4: `Used by Orks often referring to any and all species, this phrase is usually prefaced with 'Oy!'.`, answer4: `Git`,
+question5: `After receiving numerous neural implants, an Ogryn may proudly refer to themselves as this.`, answer5: `Bone'ead`,
+}
+const daddyIssues = {category: `Daddy Issues`,
+question1: `Horus Lupercal was proclaimed Warmaster after the battle of Ullanor during the Great Crusade. Immediately afterward, Big E did this.`, answer1: `Abandoned the Great Crusade`,
+question2: `Magnus, hoping to warn his father psychically, accidentally broke this new shiny toy that Big E worked very hard on.`, answer2: `Webway Project`,
+question3: `Seeing that Angron would die if he did not intervene, Big E did this for his son (and only his son) while Angron fought with his slave brethren of Nuceria.`, answer3: `Teleported him away`,
+question4: `Perturabo was infuriated and felt slighted when Big E gave this job to his other son, Rogal Dorn.`, answer4: `Praetorian`,
+question5: `No longer tolerating his religious fanatacism, Big E sought to punish his most devoted son Lorgar by raising this city of the planet Khur. Dubbed as 'The Perfect City'.`, answer5: `Monarchia`,
+}
+const xenoscum = {category: `Xenoscum`,
+question1: `The Harlequin protect this 'Craftworld' that contains any and all of the Aeldari's most precious knowledge.`, answer1: `The Black Library`,
+question2: `In T'au Society, this caste maintains responsibilities such as farming, engineering, and scienctific research.`, answer2: `Earth Caste`,
+question3: `An Ork vehicle meant for speed, this racer comes equipped with a Mek Speshul gatling gun along with as many Burna Bottles as the crew can fit.`, answer3: `Boomdakka Snazzwagon`,
+question4: `This third or fourth generation Genestealer Hybrid serves as the primary war leader for their Cult.`, answer4: `Primus`,
+question5: `This matriarchal bio-form type of Tyranid can be linked to the creation of all known Tyranid species, reproducing through asexual means.`, answer5: `Norn Queen`,
+}
+const oldLore = {category: `The Old Lore`,
+question1: `Often reffered to as the Machine God by the Adeptas Mechanicus, this being is thought to be imprisoned beneath the surface of Mars.`, answer1: `C'tan Void Dragon`,
+question2: `This reptilian species are speculated to have created the races of Slann, Jokaero, Krork, and even the Eldar.`, answer2: `The Old Ones`,
+question3: `The Necrontyr underwent this process at the hands of Star Gods in order to achieve immortality, but at the price of their souls.`, answer3: `Biotransference`,
+question4: `This chaotic and highly fragmented age of humanity is often referred to as the 'Old Night'.`, answer4: `Age of Strife`,
+question5: `During the Unification Wars, the Emperor fought against nations of humans referred to as this.`, answer5: `Techno-Barbarians`,
+}
+const noises = {category: `Noises of 40k`,
+question1: `Placeholder for Waaagh`, answer1: `Waaagh`,
+question2: `Placeholder for Bolter`, answer2: `Bolter`,
+question3: `Placeholder for Sonic Gun`, answer3: `Sonic Gun`,
+question4: `Placeholder for Titan Warhorn`, answer4: `Titan Warhorn`,
+question5: `Placeholder for Plasma Gun`, answer5: `Plasma Gun`,
+}
+
+//ROUND 2 Question Objects
+
+const sigmaBalls = {category: `Sigma Balls`,
+question1: `Before the Mortal Realms, at the end of the World-That-Was, the majority of Aelven souls were consumed by this Chaos God.`, answer1: `Slaanesh`,
+question2: `In Age of Sigmar, the Gargant faction is named as the Sons of this legendary giant.`, answer2: `Behemat`,
+question3: `Queekish words are short, clipped, and often repeated several times in a row for emphasis, and also the language of this race.`, answer3: `Skaven`,
+question4: `The Fyreslayers consider this particularly fiery dwarf to be their warrior god reborn.`, answer4: `Gotrek Gurnisson`,
+question5: `Of the Order of Azyr, these hardened trackers seek to root out the taint of Chaos in Sigmar's name.`, answer5: `Witch Hunter`,
+}
+const soulsLike = {category: `40k Souls-Like`,
+question1: `Slaves captured by the Night Lords First Claw are named in sequential order, their seventh and most legendary slave being named this.`, answer1: `Septimus`,
+question2: `Although most (if not all) legions possess the ability to use it, the Night Lords like to announce their use of this visual enhancing technology.`, answer2: `Prey Sight`,
+question3: `Talos Valcoran, the Soul Hunter and member of First Claw 10th Company Night Lords, originally held this battlefield role.`, answer3: `Apothecary`,
+question4: `This Callidus Assassin is the only mortal to successfully kill a Primarch, albeit a suicidal one.`, answer4: `M'Shen`,
+question5: `The creature known as 'The Exalted' assumed the position of Captain of the First Claw after this happened to their previous Captain, Malcharion.`, answer5: `Interred in a Dreadnought`,
+}
+const theRules = {category: `Thems The Rules`,
+question1: `Contrary to popular belief, this phase actually follows immediately AFTER the Movement Phase.`, answer1: `Psychic Phase`,
+question2: `Command Re-roll is allowed for the following, with the exception of one: Hits, Wounds, Morale, Damage, Deny the Witch, and Number-of-Attacks.`, answer2: `Morale`,
+question3: `When measuring in Kill Team 2e, the circle denotes this length in inches.`, answer3: `2"`,
+question4: `In Crusade, the combined Power Ratings of all the units in the force cannot exceed this.`, answer4: `Supply Limit`,
+question5: `Thin Their Ranks, Attrition, and First Strike are all examples of this category of secondary objectives in Matched Play.`, answer5: `No Mercy, No Respite`,
+}
+const quotes = {category: `Quotes`,
+question1: `Placeholder for Vulkan`, answer1: `Vulkan`,
+question2: `Placeholder for Trazyn`, answer2: `Trazyn`,
+question3: `Placeholder for James Workshop`, answer3: `James Workshop`,
+question4: `Placeholder for Magos Dominus Reditus, Senior Tech Priest`, answer4: `Magos Dominus Reditus, Senior Tech Priest`,
+question5: `Placeholder for Abaddon`, answer5: `Abaddon`,
+}
+const horusHeresy = {category: `That Horus And His Heresy`,
+question1: `The betrayal on Isstvan V really made this Loyalist Primarch lose his mind.`, answer1: `Ferrus Manus`,
+question2: `Jovial companion to Garviel Loken of the Luna Wolves, this Mournival member introduced Loken to the warrior lodges.`, answer2: `Tarik Torgaddon`,
+question3: `An artist, historian or journalist, these Imperial citizens had the job of recording events during the Great Crusade.`, answer3: `Remembrancer`,
+question4: `Fabricator-General turned traitor, this ally to Horus was the leader of the Dark Mechanicum.`, answer4: `Kelbor-Hal`,
+question5: `On the Plague Moon of the feral world Davin, Horus Lupercal was gravely wounded by accursed this blade.`, answer5: `Anathame`,
+}
+const stingy = {category: `Don't be So Stingy`,
+question1: `A standard Combat Patrol box costs this much.`, answer1: `$150`,
+question2: `A special army box set on release typically sells for this much.`, answer2: `$200`,
+question3: `A standard Space Marine character model, like a Primaris Lt. with Power Sword or Primaris Lt. in Reiver Armour, sells for this much.`, answer3: `$35`,
+question4: `A single pair of Citadel Tools brand Super Fine Detail Cutters sell for this much.`, answer4: `$50`,
+question5: `A Mars Pattern Warlord Titan with a head, a body, shoulder mounted Titan Laser Blasters, Ariorch Power Claw, and Quake Cannon costs this much.`, answer5: `$2,423`,
+}
+
+
+
+
+
+</script>
+</body>

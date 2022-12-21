@@ -222,6 +222,11 @@
     
 }
 
+#questPoints {
+    font-size: max(2.0vw);
+    font-weight: bold;
+}
+
 #nextRoundBtn {
     position: absolute;
     right: 33.5%;
@@ -230,5 +235,16 @@
     width: 35vw;
     max-width: 33%;
     max-height: 24%;
-    visibility: visible;
+    visibility: hidden;
+}
+
+#imgSource {
+    max-width: 50%;
+    max-height: 50%;
+
+}
+
+#impImage {
+    max-width: 50%;
+    max-height: 50%;
 }
