@@ -6,11 +6,133 @@
 <title>Jeopardy! Warhammer Edition!</title>
 </head>
 
-<body>
+<body class="backdrop">
 
+<div id="homeBack">
+    <button data-modal-target='#modal' class="roundButton" id="firstRound" onclick="changeModel(finalJeopardy.category,finalJeopardy.question1,finalJeopardy.points1),pointsChange(this)">START</button>
+    <div class="title" id="finalJ">FINAL JEOPARDY!</div>
+</div>
+
+
+<div class="questionModal" id="modal">
+        
+    <div class="frame" id="frameTopLeft"><img id="topLeft" src="Images/Frame_Top_Left.png"></img></div>
+    <div class="frame" id="frameTopRight"><img src="Images/Frame_Top_Right.png"></img></div>
+    <div class="frame" id="frameTopCenter"><img src="Images/large_button_frame_center_top.png"></img></div>
+    <div class="questionHead">
+        <div class="questionCateg" id="catMod">This is the Category of the question</div>
+        <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="questionFull">
+        <div id="questMod">This is the Question of the question</div>
+        <div id="imgSource"></div>
+    </div>
+    <div class="questionFoot">
+        <button class="resultButton" id="qCorrect" onclick="changeModel(finalJeopardy.category,finalJeopardy.answer1,finalJeopardy.points1),restartButton()">ANSWER</button>
+        <button id="endButton" onclick="restart()">RESTART</button>
+        <div id="questPoints" onclick="playAudio(audio)"></div>
+    </div>
+    <img class="frame" id="frameBottomLeft" src="Images/Frame_Bottom_Left.png"></img>
+    <img class="frame" id="frameBottomRight" src="Images/Frame_Bottom_Right.png"></img>
+    <img class="frame" id="frameBottomCenter" src="Images/Frame_Bottom_Center.png"></img>
+</div>
+
+<div id="overlay"></div>
 
 
 <script>
-    
+const openQuestionButton = document.querySelectorAll('[data-modal-target]');
+const closeQuestionButton = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+
+openQuestionButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+
+//click outside modal to exit
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.questionModal.active')
+    modals.forEach(modal => {
+        //closeModal(modal);
+    })
+})
+
+//X button in modal to exit
+closeQuestionButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.questionModal')
+        closeModal(modal)
+    })
+})
+
+//shows modal
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+//hides modal
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+const imgSource = document.getElementById('imgSource');
+const catMod = document.getElementById('catMod');
+const questMod = document.getElementById('questMod');
+const questPoints = document.getElementById('questPoints');
+const changeModel = function(category,question,points,img){
+    catMod.innerHTML = category;
+    questMod.innerHTML = question;
+    questPoints.innerHTML = points;
+    //imgSource.innerHTML = img;
+};
+
+
+const smallBox = document.getElementsByClassName('smallBox');
+
+const nextRoundBtn = document.getElementById('nextRoundBtn');
+
+function nextRound(){
+    if(smallBox.innerHTML = ''){
+        nextRoundBtn.style.visibility='visible';
+    }
+}
+
+function pointsChange(element){
+    console.log(element.innerHTML);
+    const points = element.innerHTML;
+    if(element.innerHTML){
+        element.innerHTML = '';
+    } else if (element.innerHTML == ''){
+        element.innerHTML = points;
+    }
+}
+
+function changeButton(){
+    window.location.href = 'Round2.html'
+}
+const qBox = document.getElementsByClassName('question');
+if (qBox.innerHTML == '') {
+    nextRoundBtn.style.visibility='visible';
+} 
+const endButton = document.getElementById('endButton');
+function restartButton(){
+    endButton.style.visibility='visible';
+}
+function restart(){
+    window.location.href = 'Home.html';
+}
+const finalJeopardy = { category: "Final Jeopardy",
+question1: "He is the God-Emperor. He is the Omnissiah. He is the Allfather. He is the Anathema. He is the Master of Mankind. But to those during the age of the First Cities, he was simply known as this.", answer1: "Neoth", points1: "WAGER",
+
+}
+
 </script>
 </body>

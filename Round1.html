@@ -124,9 +124,9 @@
     </div>
     
     <div id="overlay"></div>
-    <button id="nextRoundBtn" onclick="changeButton()">Next Round?</button></div>
+    <button class="roundButton" id="nextRoundBtn" onclick="changeButton()">Next Round</button></div>
 <script>
-// add button <button id="nextRoundBtn">Next Round?</button>
+
 
 
 
@@ -189,29 +189,32 @@ const smallBox = document.getElementsByClassName('smallBox');
 const nextRoundBtn = document.getElementById('nextRoundBtn');
 
 function nextRound(){
-    if(smallBox.innerHTML = ''){
+    if(col6Q1 == ''){
+        console.log('it works')
         nextRoundBtn.style.visibility='visible';
     }
 }
 
 function pointsChange(element){
+    console.log(element);
     console.log(element.innerHTML);
     const points = element.innerHTML;
     if(element.innerHTML){
         element.innerHTML = '';
-    } else if (element.innerHTML == ''){
-        element.innerHTML = points;
-    }
+    } //else if (element.innerHTML == ''){
+        //element.innerHTML = points;
+    //}
 }
 
 function changeButton(){
     window.location.href = 'Round2.html'
 }
-const qBox = document.getElementsByClassName('question');
-if (qBox.innerHTML == '') {
-    nextRoundBtn.style.visibility='visible';
-} 
+const qBox = document.getElementsByClassName('question').innerHTML;
+const col6Q1 = document.getElementById('col6Q1').innerHTML;
 
+function check() {
+    console.log(col6Q1);
+}
 
 let answerCounter = 0;
 function answerCount(){
